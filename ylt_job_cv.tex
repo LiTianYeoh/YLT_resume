@@ -1,0 +1,286 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor, eso-pic}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{skak, scalerel}
+
+\pagestyle{empty}
+\hypersetup{
+  colorlinks=true,
+  linkcolor = white,    % color of internal links (sections, pages, etc.)
+  urlcolor = white,      % color of external links (URLs)
+  citecolor = white     % color of citation links
+}
+
+
+% Define a global variable for minipage width
+\newcommand{\lhsWidth}{0.3\textwidth}
+\newcommand{\rhsWidth}{0.65\textwidth}
+
+%----- Set itemsep globally
+\setlist[itemize]{
+	itemsep = 0.1em,
+	before = \vspace{0.1em}
+}
+
+% Define custom RGB color
+\definecolor{lhsBgCol}{RGB}{0, 74, 173}
+\definecolor{mainSkillBoxCol}{RGB}{82, 113, 255}
+\definecolor{mainSkillTextCol}{RGB}{255, 255, 255}
+\definecolor{subSkillBoxCol}{RGB}{56, 182, 255}
+\definecolor{subSkillTextCol}{RGB}{255, 255, 255}
+
+%----- define environment 
+%-- for experience
+\newenvironment{expSection}[3]{%
+    \textbf{#1} \hfill {#2} \\
+    #3
+	\vspace{-6pt}
+}{}
+
+%-- for skill box
+\newenvironment{mainSkillBox}[2]{%
+  \colorbox{mainSkillBoxCol}{%
+    \parbox{#2}{%
+	\centering
+      \textbf{\textcolor{mainSkillTextCol} {#1}}
+    }
+  }
+}{}
+
+\newenvironment{subSkillBox}[2]{%
+  \colorbox{subSkillBoxCol}{%
+    \parbox{#2}{%
+	\centering
+      {\textcolor{subSkillTextCol} {#1}}
+    }
+  }
+}{}
+
+
+
+\begin{document}
+
+% add LHS BG
+\AddToShipoutPictureBG{
+  \AtPageLowerLeft{%
+    \color{lhsBgCol}%
+    \rule{\dimexpr0.3\pdfpagewidth+0.2in}{\dimexpr\pdfpageheight}%
+  }
+}
+
+\begin{figure}[h]
+
+%-------------- LHS
+\color{white}
+\begin{minipage}[t][\paperheight][t]{\lhsWidth}
+	%----------------- Contact
+	{\large \textbf{Contact}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-15pt}
+	\newline \vspace{3pt}
+	\faPhone \hspace{3pt} \textbf{+60 12-3190613}
+	\newline \vspace{3pt}
+	\faEnvelope \hspace{3pt} \textbf{yeohlitian@gmail.com}
+	\newline \vspace{3pt}
+	\faGithub \hspace{3pt} \textbf{\href{https://github.com/LiTianYeoh}{github.com/LiTianYeoh}}
+
+	\vspace{3em}
+
+	%----------------- Skills & Technologies
+	{\large \textbf{Skills \& Technologies}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-15pt}
+	\newline \vspace{3pt}
+	\begin{mainSkillBox}{Scikit-learn}{60pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{PyTorch}{40pt}
+	\end{mainSkillBox}
+	\newline \vspace{3pt}
+	\begin{mainSkillBox}{OpenCV}{40pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{PowerBI}{40pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{bs4}{20pt}
+	\end{mainSkillBox}
+	\newline \vspace{3pt}
+	\begin{mainSkillBox}{R Shiny}{45pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{ggplot2}{35pt}
+	\end{mainSkillBox}
+	\newline \vspace{3pt}
+	\begin{subSkillBox}{PyTesseract}{50pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{Selenium}{40pt}
+	\end{subSkillBox}
+	\newline \vspace{3pt}
+	\begin{subSkillBox}{Hadoop}{35pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{Spark}{25pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{MongoDB}{45pt}
+	\end{subSkillBox}
+	\newline \vspace{3pt}
+	\begin{subSkillBox}{Tableau}{35pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{AWS}{20pt}
+	\end{subSkillBox}
+
+	\vspace{3em}
+
+	%----------------- Programming Languages
+	{\large \textbf{Programming Languages}}
+	\newline
+	\rule [6pt]{\linewidth}{1pt}	
+	\vspace{-15pt}	
+	\newline \vspace{3pt}
+	\begin{mainSkillBox}{Python}{35pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{R}{8pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{SAS}{20pt}
+	\end{mainSkillBox}
+	\begin{mainSkillBox}{SQL}{20pt}
+	\end{mainSkillBox}
+	\newline \vspace{3pt}
+	\begin{subSkillBox}{MATLAB}{40pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{VBA}{20pt}
+	\end{subSkillBox}
+%	\begin{subSkillBox}{Kotlin}{20pt}
+%	\end{subSkillBox}
+	\newline \vspace{3pt}
+	\begin{subSkillBox}{HTML}{25pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{CSS}{20pt}
+	\end{subSkillBox}
+	\begin{subSkillBox}{Javascript}{40pt}
+	\end{subSkillBox}
+
+	\vspace{3em}
+
+	%----------------- Languages
+	{\large \textbf{Languages}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-24pt}
+	\textbf{
+		\begin{itemize} [left = 3pt, itemsep = 0pt, parsep=2pt]
+			\item English
+			\item Chinese
+			\item Malay
+		\end{itemize}
+	}
+
+	\vspace{3em}
+
+	%---------------- Interest
+	{\large \textbf{Interest}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-18pt}
+
+	%------- Chess
+	{\scalerel*{\BlackKnightOnWhite}{Xg} \textbf{Chess}} \newline
+	\begin{minipage}[above=-\baselineskip]{14em}
+		\vspace{-9pt}
+		\textbf{
+			\begin{itemize} [left = 3pt, itemsep = 0pt, parsep=2pt]
+				\item Ranked 1\textsuperscript{st} in Malaysia (2024 Feb).
+				\item Attain the title of International Master (IM)
+				\item Southeast Asian (SEA) Games gold medalist (2019)
+			\end{itemize}
+		}
+	\end{minipage}
+\end{minipage}
+\hfill
+%-------------- RHS
+\color{black}
+\begin{minipage}[t]{\rhsWidth}
+	%---------------- Title and short summary
+	%\vspace{12pt}
+	{\Huge \textbf{Yeoh Li Tian}} 
+	\vspace{6pt}
+	\newline
+	\textit{As a data science graduate from Malaysia with a solid foundation in mathematics, I am passionate about AI/machine learning and their applications. Also a SEA games gold medalist in chess.}
+	\vspace{18pt}	
+	
+	%---------------- Working Experience
+	{\Large \faBriefcase \hspace{3pt} \textbf{Working Experience}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-15pt}
+
+	%------- KPMG FRM
+	\begin{expSection} {KPMG Malaysia} {2023 Aug - Present} {Associate - Financial Risk Management}
+		\begin{itemize} [itemsep = 0pt, parsep=2pt]
+			\item Assisted the client bank in developing behavioral models for IRRBB reporting, specifically focusing on the prepayment model where Single Monthly Mortality (SMM) rate served as the key variable of interest.
+			\item Validated the Expected Credit Loss (ECL) model for the client bank, ensuring its compliance with MFRS9 requirements.
+		\end{itemize}
+	\end{expSection}
+
+	\vspace{0.5em}
+
+	%--------- Lifewood
+	\begin{expSection} {Lifewood Data Technology} {2023 Feb - 2023 Aug} {Data Analyst}
+		\begin{itemize} [itemsep = 0pt, parsep=2pt]
+			\item Created and modified Microsoft Power BI reports based on user requirements to support business decision-making processes.
+			\item Contributed to research on integrating AI tools, such as LLM and OCR, to improve productivity across various departments and projects.
+			\item Utilized LLM to optimize the efficiency of a data labelling project, leading to a 20\% reduction in completion time.
+		\end{itemize}
+	\end{expSection}
+
+	\vspace{1.5em}
+	
+	%---------------- Education
+	{\Large \faGraduationCap \hspace{3pt} \textbf{Education}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-15pt}
+	
+	%-------- Master of Data Science
+	\begin{expSection} {Master of Data Science} {2021 - 2022} {University of Malaya, Malaysia}
+		\begin{itemize} [itemsep = 0pt, parsep=2pt]
+			\item Completed mini-projects on various machine learning tasks.
+			\item Implemented CNN using PyTorch library in solving image recognition task.
+			\item Hands-on experience in using big data tools such as Hadoop and MongoDB.
+		\end{itemize}
+	\end{expSection}
+	
+	\vspace{0.5em}
+	
+	%--------- ICL Math
+	\begin{expSection} {BSc Mathematics} {2018 - 2021} {Imperial College London, UK}
+		\begin{itemize} [itemsep = 0pt, parsep=2pt]
+			\item Dean's list in Year 1 and Year 2.
+		\end{itemize}
+	\end{expSection}
+	
+	\vspace{1.5em}
+
+	%---------------- Personal Project
+	{\Large \faTools \hspace{3pt} \textbf{Personal Project}} \newline
+	\rule [6pt]{\linewidth}{1pt}
+	\vspace{-15pt}
+
+	%------- FIDE Norm Calculator
+	\textbf{\href{https://github.com/LiTianYeoh/FIDE_Norm_Calculator}{\color{black} FIDE Norm Calculator [\faGithub \space Repository]}}
+	\vspace{-6pt}
+	\begin{itemize} [itemsep = 0pt, parsep=2pt]
+		\item Web-based app (RShiny) to assess chess players' performance against World Chess Federation (FIDE) title norm requirement. 
+		\item Supports parsing of players' tournament performance data from chess-results.com, enabling seamless translation of results into the app for streamlined evaluation.
+	\end{itemize}
+
+	\vspace{0.5em}
+
+	%------- MLBB Tournament Analysis
+	%-------------- to update link!
+	\textbf{\href{https://github.com/LiTianYeoh/MLBB_Tournament_Analysis}{\color{black} MLBB Tournament Analysis [\faGithub \space Repository] }}
+	\vspace{-6pt}
+	\begin{itemize} [itemsep = 0pt, parsep=2pt]
+		\item Developed a Python script using Beautiful Soup 4 (bs4) to scrape MLBB (a popular mobile MOBA game in SEA region) professional tournament game data from Liquipedia.
+		\item As of 2023 December, a total of more than 10,000 game data collected from 228 tournaments.
+		\item (On-going) Perform several analysis such as hero ban-pick statistics on the data collected.
+	\end{itemize}
+\end{minipage}
+
+\end{figure}
+\end{document}
